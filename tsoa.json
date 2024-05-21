@@ -1,0 +1,22 @@
+{
+  "entryFile": "src/main.ts",
+  "noImplicitAdditionalProperties": "silently-remove-extras",
+  "controllerPathGlobs": ["src/app/api/**/*.controller.ts"],
+  "spec": {
+    "outputDirectory": "src/app/api",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "header"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "src/app/api"
+  },
+  "compilerOptions": {
+    "config": "./tsconfig.json"
+  }
+}

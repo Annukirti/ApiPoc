@@ -1,15 +1,14 @@
-import { Request, Response } from "express";
 import { Controller, Get, Route, Tags } from "tsoa";
 
-@Route("users")
-@Tags("User")
-export class UserController extends Controller {
+@Route("product")
+@Tags("Product")
+export class ProductController extends Controller {
   @Get("/")
-  getUser() {
+  getProducts() {
     console.log("Hello, I am a GET user API!");
     return [
-      { id: 1, name: "John Doe" },
-      { id: 2, name: "Jane Doe" },
+      { id: 1, name: "Annukirti" },
+      { id: 2, name: "Riya" },
     ];
   }
 

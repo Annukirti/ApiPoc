@@ -10,6 +10,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node", "express"],
+    "resolveJsonModule": true
   }
 }
