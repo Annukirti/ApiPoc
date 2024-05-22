@@ -12,6 +12,8 @@
     "noImplicitOverride": true,
     "skipLibCheck": true,
     "types": ["node", "express"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "experimentalDecorators": true, // Enable decorator support
+    "emitDecoratorMetadata": true // Emit metadata for decorators
   }
 }

@@ -1,5 +1,14 @@
-import { Request, Response } from "express";
-import { Controller, Get, Route, Tags } from "tsoa";
+import {
+  Body,
+  Controller,
+  Get,
+  Path,
+  Post,
+  Route,
+  SuccessResponse,
+  Tags,
+} from "tsoa";
+import { User } from "../../common";
 
 @Route("users")
 @Tags("User")
@@ -13,19 +22,30 @@ export class UserController extends Controller {
     ];
   }
 
-  // createUser(req: Request, res: Response) {
-  //   res.send("Hello, I am a POST user API!");
-  // }
+  @Post()
+  @SuccessResponse("201", "Created") // Custom success response
+  async createUser(@Body() createUserBody: User): Promise<User> {
+    return createUserBody;
+  }
 
-  // getUserById(req: Request, res: Response) {
-  //   res.send("Hello, I am a GET user BY ID API!");
-  // }
+  async getUserById(@Path() id: number): Promise<User> {
+    return {
+      name: "string",
+      password: "string",
+      email: "string",
+      age: 2,
+    };
+  }
 
-  // updateUserById(req: Request, res: Response) {
-  //   res.send("Hello, I am a UPDATE user API!");
-  // }
+  async updateUserById(
+    @Path() id: number,
+    @Body() updateUserBody: User
+  ): Promise<User> {
+    console.log("Hello, I am a UPDATE user API!");
+    return updateUserBody;
+  }
 
-  // deleteUserById(req: Request, res: Response) {
-  //   res.send("Hello, I am a DELETE user API!");
-  // }
+  deleteUserById(@Path() id: number) {
+    return "Hello, I am a DELETE user API!";
+  }
 }

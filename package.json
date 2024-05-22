@@ -8,7 +8,10 @@
     "lint": "eslint . --ext .ts",
     "build": "tsoa spec-and-routes && tsc",
     "start": "npx nodemon",
-    "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\""
+    "dev": "concurrently \"npm run dev:ts\" \"npm run dev:tsoa\"",
+    "dev:ts": "nodemon --config nodemon.json",
+    "dev:tsoa": "nodemon --config nodemon-tsoa.json",
+    "tsoa": "tsoa spec-and-routes"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +30,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.0",
